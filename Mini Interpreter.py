@@ -8,12 +8,12 @@ class MiniInterpreter:
         """
         Evaluate an arithmetic expression with variables substituted.
         """
-        # Replace variables with their values
+       
         for var, val in self.variables.items():
             expr = re.sub(rf'\b{var}\b', str(val), expr)
 
         try:
-            # Evaluate the numeric expression safely
+           
             return eval(expr, {"__builtins__": {}})
         except Exception as e:
             raise ValueError(f"Invalid expression: {expr}") from e
@@ -26,7 +26,7 @@ class MiniInterpreter:
         line = line.strip()
 
         if line.startswith("let"):
-            # Example: let x = 10
+            
             match = re.match(r"let\s+(\w+)\s*=\s*(.+)", line)
             if not match:
                 raise SyntaxError("Invalid let statement")
@@ -36,7 +36,7 @@ class MiniInterpreter:
             return None
 
         elif line.startswith("if"):
-            # Example: if x > 3 then x + 1 else x - 1
+           
             match = re.match(r"if\s+(.+?)\s+then\s+(.+?)\s+else\s+(.+)", line)
             if not match:
                 raise SyntaxError("Invalid if statement")
@@ -58,11 +58,11 @@ def test_mini_interpreter():
 
     print("Executing: if y > 10 then y * 2 else y - 2")
     result = interpreter.execute("if y > 10 then y * 2 else y - 2")
-    print("Result:", result)  # Expected: 30
+    print("Result:", result)  
 
     print("Executing: if x < 5 then x + 1 else x - 1")
     result = interpreter.execute("if x < 5 then x + 1 else x - 1")
-    print("Result:", result)  # Expected: 9
+    print("Result:", result)  
 
 if __name__ == "__main__":
     interpreter = MiniInterpreter()
@@ -75,8 +75,8 @@ if __name__ == "__main__":
 
     print(">>> if y > 10 then y * 2 else y - 2")
     result = interpreter.execute("if y > 10 then y * 2 else y - 2")
-    print("Result:", result)  # Expected: 30
+    print("Result:", result)  
 
     print(">>> if x < 5 then x + 1 else x - 1")
     result = interpreter.execute("if x < 5 then x + 1 else x - 1")
-    print("Result:", result)  # Expected: 9
+    print("Result:", result)  
