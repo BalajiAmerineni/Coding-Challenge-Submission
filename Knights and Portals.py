@@ -37,7 +37,7 @@ def shortest_path_with_portal(grid: List[List[int]]) -> int:
     if min_path == float('inf'):
         min_path = -1
 
-    # Try all teleport pairs
+  
     min_teleport_path = float('inf')
     empty_cells = [(i, j) for i in range(n) for j in range(m) if grid[i][j] == 0]
 
@@ -53,9 +53,6 @@ def shortest_path_with_portal(grid: List[List[int]]) -> int:
     result = min(min_path, min_teleport_path)
     return result if result != float('inf') else -1
 
-# ---------------------------
-# ✅ Sample Test Cases
-# ---------------------------
 
 def run_tests():
     grid1 = [
@@ -63,20 +60,20 @@ def run_tests():
         [1, 1, 0],
         [0, 0, 0]
     ]
-    print("Test Case 1 (No teleport needed):", shortest_path_with_portal(grid1))  # Expected: 4
+    print("Test Case 1 (No teleport needed):", shortest_path_with_portal(grid1)) 
 
     grid2 = [
         [0, 1, 1],
         [1, 0, 1],
         [1, 1, 0]
     ]
-    print("Test Case 2 (Teleport required):", shortest_path_with_portal(grid2))  # Expected: 3
+    print("Test Case 2 (Teleport required):", shortest_path_with_portal(grid2)) 
 
     grid3 = [
         [0, 1],
         [1, 1]
     ]
-    print("Test Case 3 (No path):", shortest_path_with_portal(grid3))  # Expected: -1
+    print("Test Case 3 (No path):", shortest_path_with_portal(grid3)) 
 
 if __name__ == "__main__":
     run_tests()
