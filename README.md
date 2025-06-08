@@ -26,7 +26,9 @@ Validates a 9x9 Sudoku board including additional custom zones with the standard
 Outputs.docx
 Contains screenshots showing sample outputs from all programs to demonstrate successful execution and correctness.
 
-# How to Run
+# How to Run 
 Each solution is contained in its own Python script. You can run any of them using Python 3.x:
+
 python3 <script_name>.py
+
 Please refer to the Outputs.docx file for sample inputs and expected outputs for each problem.
