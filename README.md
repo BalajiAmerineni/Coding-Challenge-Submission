@@ -28,7 +28,5 @@ Contains screenshots showing sample outputs from all programs to demonstrate suc
 
 # How to Run
 Each solution is contained in its own Python script. You can run any of them using Python 3.x:
-
 python3 <script_name>.py
-
 Please refer to the Outputs.docx file for sample inputs and expected outputs for each problem.
