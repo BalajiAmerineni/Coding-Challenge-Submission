@@ -11,7 +11,7 @@ def alien_order(words: List[str]) -> str:
     Returns:
         str: A string representing the correct character order in the alien language.
     """
-    # Step 1: Build graph and in-degree count
+   
     graph: Dict[str, Set[str]] = defaultdict(set)
     in_degree: Dict[str, int] = {char: 0 for word in words for char in word}
 
@@ -20,7 +20,7 @@ def alien_order(words: List[str]) -> str:
         min_len = min(len(w1), len(w2))
 
         if w1[:min_len] == w2[:min_len] and len(w1) > len(w2):
-            # Invalid order case
+           
             return ""
 
         for c1, c2 in zip(w1, w2):
@@ -30,7 +30,7 @@ def alien_order(words: List[str]) -> str:
                     in_degree[c2] += 1
                 break
 
-    # Step 2: Topological sort (Kahn's algorithm)
+  
     queue = deque([c for c in in_degree if in_degree[c] == 0])
     order = []
 
@@ -43,32 +43,30 @@ def alien_order(words: List[str]) -> str:
                 queue.append(neighbor)
 
     if len(order) < len(in_degree):
-        # Cycle detected
+        
         return ""
 
     return "".join(order)
 
-# ---------------------------
-# ✅ Sample Test Cases
-# ---------------------------
+#Test Cases
 
 def run_tests():
     print("Test Case 1:")
     words1 = ["wrt", "wrf", "er", "ett", "rftt"]
     print("Input:", words1)
-    print("Output:", alien_order(words1))  # Possible: "wertf"
+    print("Output:", alien_order(words1))  
     print()
 
     print("Test Case 2:")
     words2 = ["z", "x"]
     print("Input:", words2)
-    print("Output:", alien_order(words2))  # Output: "zx"
+    print("Output:", alien_order(words2))  
     print()
 
     print("Test Case 3:")
     words3 = ["z", "x", "z"]
     print("Input:", words3)
-    print("Output:", alien_order(words3))  # Output: "" (Cycle)
+    print("Output:", alien_order(words3)) 
     print()
 
 if __name__ == "__main__":
