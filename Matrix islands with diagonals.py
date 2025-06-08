@@ -12,7 +12,7 @@ def count_islands(matrix: List[List[int]]) -> int:
     rows, cols = len(matrix), len(matrix[0])
     visited = [[False for _ in range(cols)] for _ in range(rows)]
 
-    # All 8 possible directions: horizontal, vertical, and diagonals
+    
     directions = [
         (-1, -1), (-1, 0), (-1, 1),
         (0, -1),          (0, 1),
@@ -49,7 +49,7 @@ def test_count_islands():
         [0, 0, 0, 1],
         [1, 1, 0, 0]
     ]
-    print("Islands Count:", count_islands(mat1))  # Expected: 3
+    print("Islands Count:", count_islands(mat1))  
 
     print("\nTest Case 2:")
     mat2 = [
@@ -57,7 +57,7 @@ def test_count_islands():
         [0, 1, 0],
         [0, 0, 1]
     ]
-    print("Islands Count:", count_islands(mat2))  # Expected: 1 (all connected diagonally)
+    print("Islands Count:", count_islands(mat2)) 
 
     print("\nTest Case 3:")
     mat3 = [
@@ -65,6 +65,6 @@ def test_count_islands():
         [0, 0, 0],
         [0, 0, 0]
     ]
-    print("Islands Count:", count_islands(mat3))  # Expected: 0
+    print("Islands Count:", count_islands(mat3))  
 
 test_count_islands()
